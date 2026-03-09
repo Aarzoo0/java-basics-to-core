@@ -1,4 +1,4 @@
-## Introduction to Java
+------Introduction to Java---------
 
 Java is a high-level, object-oriented programming language developed by Sun Microsystems in 1995 (later acquired by Oracle).
 
@@ -10,4 +10,4 @@ It is widely used for:
 
 One of Java’s biggest advantages is **platform independence**.
 
-**Write Once, Run Anywhere (WORA)** – meaning Java code can run on any system that has a JVM.
+Write Once, Run Anywhere (WORA) – meaning Java code can run on any system that has a JVM.
