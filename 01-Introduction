@@ -1,0 +1,131 @@
+------------------------------------------Introduction to Java--------------------------------------
+
+Java is a high-level, object-oriented programming language developed by Sun Microsystems in 1995 (later acquired by Oracle).
+
+It is widely used for:
+- Backend development
+- Enterprise applications
+- Android apps
+- Web APIs and services
+
+One of Java’s biggest advantages is **platform independence**.
+
+Write Once, Run Anywhere (WORA) – meaning Java code can run on any system that has a JVM.
+
+----------------------Compiled vs Interpreted Languages-------------------------
+
+Programming languages usually run in two ways.
+
+Compiled languages:
+- Code is converted to machine code before running.
+- Example: C, C++
+- Faster execution.
+
+Interpreted languages:
+- Code runs line by line using an interpreter.
+- Example: Python, JavaScript
+
+Java is actually a mix of both.
+
+Java code is first compiled and then executed by the JVM.
+
+
+
+------------------------How Java Works----------------------
+
+1. We write code in a `.java` file  
+2. The Java compiler (`javac`) compiles it into bytecode (`.class`)
+3. The JVM runs this bytecode
+
+Since JVM exists for many operating systems, the same Java code can run anywhere.
+
+Write Once, Run Anywhere (WORA)
+
+
+
+------------------JDK vs JRE vs JVM----------------------
+
+These three components make Java work.
+
+1] JVM (Java Virtual Machine)
+
+JVM is the engine that runs Java bytecode.
+
+Responsibilities:
+- Executes bytecode
+- Memory management
+- Garbage collection
+
+2] JRE (Java Runtime Environment)
+
+JRE provides the environment needed to run Java programs.
+
+It contains:
+- JVM
+- Core Java libraries
+- Runtime files
+
+
+3] JDK (Java Development Kit)
+
+JDK is what developers install to write and build Java programs.
+
+It includes:
+- JRE
+- Java compiler (`javac`)
+- Development tools
+
+4] JIT (Just-In-Time Compiler)
+
+JIT is a part of the JVM that improves performance.
+
+Instead of interpreting bytecode every time, JIT converts frequently used bytecode into native machine code at runtime, making execution faster.
+
+So JVM execution is a combination of:
+- interpretation
+- JIT compilation
+
+### Relationship
+
+JDK  
+└── JRE  
+  └── JVM  
+
+
+
+--------------------OpenJDK----------------------
+
+OpenJDK (Open Java Development Kit) is the open-source implementation of Java.
+
+Most developers today use OpenJDK instead of Oracle's commercial builds.
+
+Popular OpenJDK distributions include:
+- Temurin
+- Amazon Corretto
+- Microsoft Build of OpenJDK
+
+Functionally they are almost the same for development.
+
+
+--------------Latest Java Version--------------
+
+Java releases a new version every 6 months.
+
+Some versions are LTS (Long Term Support) versions which are used widely in industry.
+
+Recent important versions:
+
+- Java 17 (LTS)
+- Java 21 (LTS)
+
+Currently Java 21 is the latest LTS version used in many modern projects.
+
+
+--------------Why We Install JDK------------
+
+To develop Java programs we need:
+
+- a compiler to convert `.java` code into bytecode
+- the runtime environment to run the program
+
+The JDK provides both, which is why developers install it.
