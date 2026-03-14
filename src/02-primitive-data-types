@@ -1,0 +1,185 @@
+# Java Primitive Data Types
+
+Primitive data types are the **basic built-in data types in Java**.
+They store **simple values directly in memory** and are **not objects**.
+
+Java provides 8 primitive data types, which can be grouped into four categories.
+
+# 1️⃣ Integral Numbers
+
+These data types store integer values without decimals.
+
+| Type  | Size    | Wrapper Class |
+| ----- | ------- | ------------- |
+| byte  | 1 byte  | Byte          |
+| short | 2 bytes | Short         |
+| int   | 4 bytes | Integer       |
+| long  | 8 bytes | Long          |
+
+---------Important Points------------------
+
+* `int` is the default integer type in Java.
+* Any whole number written in Java is treated as int by default.
+* `long` is used when the number exceeds the `int` range.
+* Large `long` values must end with `L`, otherwise Java treats them as `int`.
+
+Example:
+Java provides constants like:
+
+* `Byte.MIN_VALUE`
+* `Byte.MAX_VALUE`
+
+These help determine the minimum and maximum range of each data type.
+
+Example ranges:
+
+| Type  | Range             |
+| ----- | ----------------- |
+| byte  | -128 to 127       |
+| short | -32,768 to 32,767 |
+| int   | -2³¹ to 2³¹ − 1   |
+| long  | -2⁶³ to 2⁶³ − 1   |
+
+
+
+# 2️⃣ Decimal Numbers (Floating Point Types)
+
+These data types store numbers with decimal values.
+
+| Type   | Size    | Precision   | Wrapper |
+| ------ | ------- | ----------- | ------- |
+| float  | 4 bytes | ~6–7 digits | Float   |
+| double | 8 bytes | ~15 digits  | Double  |
+
+### Important Points
+
+* `double` is the default decimal type in Java.
+* Any decimal number written in Java is treated as double by default.
+* `float` requires `f` or `F` at the end of the value.
+* `double` provides higher precision than float.
+
+Java also provides constants like:
+
+* `Float.MIN_VALUE`
+* `Float.MAX_VALUE`
+* `Double.MIN_VALUE`
+* `Double.MAX_VALUE`
+
+These define the range limits of floating-point numbers.
+
+
+
+# 3️⃣ Character (char)
+
+The `char` data type stores **a single character**.
+
+| Type | Size    |
+| ---- | ------- |
+| char | 2 bytes |
+
+### Important Points
+
+* `char` uses Unicode (UTF-16 encoding).
+* Because of Unicode, Java supports many languages, symbols, and emojis.
+* Each character internally has a numeric Unicode value.
+
+Example concept from the code:
+
+* `'a'` has numeric value 97.
+
+Characters can also be created using:
+
+* Unicode numbers
+* Unicode hexadecimal values (example: `\u27A5`)
+
+Character range: 0 to 65535
+This means Java supports 65,536 possible characters.
+
+
+
+----------ASCII vs Unicode-----------
+
+ASCII--ASCII represents characters using numeric values.
+
+Range: 0 – 127
+
+
+It includes:
+
+* English letters
+* digits
+* basic symbols
+
+
+
+### Unicode -- Unicode is a universal character encoding system.
+
+It supports:
+
+* multiple languages
+* special symbols
+* emojis
+
+ASCII is simply a subset of Unicode.
+
+In the code example, a loop prints ASCII characters from 0 to 127.
+
+
+
+# 4️⃣ Boolean
+
+The `boolean` data type stores logical values.
+
+Possible values:
+true
+false
+
+
+### Important Points
+
+* Used in conditions and decision making
+* Commonly used in if statements and loops
+
+---
+
+# Wrapper Classes
+
+Each primitive type has a corresponding wrapper class.
+
+Wrapper classes allow primitive values to be treated as objects and provide useful constants and methods.
+
+| Primitive | Wrapper   |
+| --------- | --------- |
+| byte      | Byte      |
+| short     | Short     |
+| int       | Integer   |
+| long      | Long      |
+| float     | Float     |
+| double    | Double    |
+| char      | Character |
+| boolean   | Boolean   |
+
+Wrapper classes provide constants such as:
+
+* `MIN_VALUE`
+* `MAX_VALUE`
+
+These help determine the range of each primitive type**.
+
+---
+
+# Quick Summary
+
+| Data Type | Size          |
+| --------- | ------------- |
+| byte      | 1 byte        |
+| short     | 2 bytes       |
+| int       | 4 bytes       |
+| long      | 8 bytes       |
+| float     | 4 bytes       |
+| double    | 8 bytes       |
+| char      | 2 bytes       |
+| boolean   | JVM dependent |
+
+
+

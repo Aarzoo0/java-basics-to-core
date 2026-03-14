@@ -1,0 +1,103 @@
+---------- Java Variables-----------------
+
+A variable is a name given to a memory location used to store data in a program.
+
+In Java, a variable must be declared with a data type before it can be used.
+
+Example :
+dataType variableName = value;
+int myVar = 10;
+
+Here:
+ int → data type
+ myVar→ variable name
+ 10 → value stored in the variable
+
+
+---------------Rules for Naming Variables----------
+
+Java has some rules that must be followed when creating variable names.
+
+1️⃣ Variable names cannot start with a number
+
+A variable must start with:
+
+* a letter
+* an underscore `_`
+* a dollar sign `$`
+
+Valid examples:
+myVar
+_dollar
+$amount
+
+Invalid example:
+1hello - This will cause a compile-time error.
+
+
+2️⃣ Combination of letters and numbers is allowed
+
+Variable names can contain letters and numbers together.
+
+Example:
+newNum123
+user1
+age2024
+
+
+3️⃣ Follow Camel Case Convention
+Java follows camelCase naming convention for variables.
+
+Camel case means:
+* first word starts with lowercase
+* each new word starts with uppercase
+
+Example:
+myAge
+studentCount
+totalPrice
+userName
+
+
+Using meaningful names makes the code easier to read and maintain.
+
+
+
+4️⃣ Reserved Keywords Cannot Be Used
+
+Java has reserved keywords that have special meanings in the language.
+
+These keywords **cannot be used as variable names**.
+
+Example:
+true
+false
+class
+int
+public
+static
+
+
+Invalid example:
+int true = 7;
+This will cause a compile-time error.
+
+
+
+Good variable names should:
+
+* be meaningful
+* follow camelCase
+* clearly represent the data stored
+
+Good examples:
+myAge
+studentMarks
+totalAmount
+
+
+Bad examples:
+x
+a1
+num
+
