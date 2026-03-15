@@ -1,0 +1,205 @@
+#  Java Operators
+
+Operators in Java are symbols used to perform operations on variables and values such as calculations, comparisons, and logical decisions.
+
+# 1️⃣ Arithmetic Operators
+
+Arithmetic operators are used for mathematical calculations
+
+| Operator | Description         | Example |
+| -------- | ------------------- | ------- |
+| `+`      | Addition            | `a + b` |
+| `-`      | Subtraction         | `a - b` |
+| `*`      | Multiplication      | `a * b` |
+| `/`      | Division            | `a / b` |
+| `%`      | Modulus (remainder) | `a % b` |
+
+### Example
+int salary = 30000;
+int rent = 4000;
+int grocery = 5000;
+int otherExpenses = 8000;
+
+int remainingAmount = salary - (rent + grocery + otherExpenses);
+System.out.println(remainingAmount);
+
+
+# 2️⃣ Type Casting
+
+Type casting is the process of converting one data type into another.
+
+
+------Widening (Automatic Casting)-------------
+
+Widening occurs when a smaller data type is converted into a larger data type.
+Java performs this automatically because the larger type can store the value safely.
+
+Example:
+int marks = 85;
+double finalMarks = marks;
+
+Output
+85 → 85.0
+
+
+--------Widening hierarchy--------------
+byte → short → int → long → float → double
+
+
+---------Narrowing (Explicit Casting)----------
+
+Narrowing happens when a **larger data type is converted into a smaller data type**.
+This requires **explicit casting** and may cause **data loss**.
+
+Example-
+double price = 99.99;
+int finalPrice = (int) price;
+
+Output
+Original price: 99.99
+After conversion: 99
+
+# 3️⃣ Assignment Operators
+
+Assignment operators are used to **assign values to variables**.
+
+| Operator | Example  | Equivalent   |
+| -------- | -------- | ------------ |
+| `=`      | `a = 5`  | Assign value |
+| `+=`     | `a += 5` | `a = a + 5`  |
+| `-=`     | `a -= 3` | `a = a - 3`  |
+| `*=`     | `a *= 2` | `a = a * 2`  |
+| `/=`     | `a /= 2` | `a = a / 2`  |
+| `%=`     | `a %= 3` | `a = a % 3`  |
+
+Example-
+int number = 10;
+
+number += 5;
+number -= 3;
+number *= 2;
+
+# 4️⃣ Relational Operators
+
+Relational operators are used to **compare two values** and return a **boolean result**.
+
+| Operator | Meaning                  |
+| -------- | ------------------------ |
+| `==`     | Equal to                 |
+| `!=`     | Not equal to             |
+| `>`      | Greater than             |
+| `<`      | Less than                |
+| `>=`     | Greater than or equal to |
+| `<=`     | Less than or equal to    |
+
+Example-
+int age = 20;
+
+System.out.println(age > 18);
+System.out.println(age == 20);
+
+
+# 5️⃣ Logical Operators
+
+Logical operators are used to **combine multiple conditions**.
+
+| Operator | Meaning     |   |            |
+| -------- | ----------- | - | ---------- |
+| `&&`     | Logical AND |   |            |
+| `        |             | ` | Logical OR |
+| `!`      | Logical NOT |   |            |
+
+Example-
+int personsAge = 25;
+boolean hasLicense = true;
+
+System.out.println(personsAge > 18 && hasLicense);
+System.out.println(personsAge > 18 || hasLicense);
+System.out.println(!hasLicense);
+
+# 6️⃣ Unary Operators
+
+Unary operators work on **a single operand**.
+
+| Operator | Description    |
+| -------- | -------------- |
+| `+`      | Positive value |
+| `-`      | Negative value |
+| `++`     | Increment by 1 |
+| `--`     | Decrement by 1 |
+| `!`      | Logical NOT    |
+
+-----------Increment Operator-----------
+
+### Prefix Increment
+
+Value is incremented first, then used.
+
+int a = 5;
+int b = ++a;
+
+Output
+a = 6
+b = 6
+
+### Postfix Increment
+
+Value is used first, then incremented.
+
+int c = 5;
+int d = c++;
+
+Output
+c = 6
+d = 5
+
+
+-----------Decrement Operator---------
+
+### Prefix Decrement
+
+int a = 10;
+int b = --a;
+
+Output
+a = 9
+b = 9
+
+### Postfix Decrement
+
+int c = 10;
+int d = c--;
+
+Output
+c = 9
+d = 10
+
+# 7️⃣ Operator Precedence
+
+Operator precedence determines which operation Java performs first when multiple operators appear in the same expression.
+
+Example-
+int result = 10 + 5 * 2 - 4 / 2;
+
+Evaluation
+5 * 2 = 10
+4 / 2 = 2
+10 + 10 - 2 = 18
+
+Result-18
+
+#  Operator Precedence Order (Highest → Lowest)
+() → ++ -- ! → * / % → + - → < > <= >= → == != → && → || → ?: → = += -= *= /= %=
+
+
+
+# ✅ Key Takeaways
+
+* Arithmetic operators perform mathematical calculations.
+* Widening conversion is automatic and safe.
+* Narrowing conversion requires explicit casting and may lose data.
+* Relational operators return boolean results.
+* Logical operators combine conditions.
+* Unary operators modify a single operand.
+* Operator precedence controls the order of evaluation in expressions.
+
