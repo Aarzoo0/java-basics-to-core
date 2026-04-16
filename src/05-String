@@ -1,0 +1,183 @@
+# Java String Class – Detailed Notes
+
+---
+
+##  What is a String?
+
+- A String is a sequence of characters.
+- In Java, String is a class (object) from `java.lang`.
+- Strings are immutable → once created, they cannot be changed.
+
+---
+
+## 🔹 Memory Management of Strings
+
+Java stores strings in two areas:
+
+### 1. Heap Memory
+- All objects are stored here.
+- Strings created using `new` keyword are stored in heap.
+- Even if values are same, separate objects are created.
+
+### 2. String Constant Pool (SCP)
+- A special memory area inside heap.
+- Stores string literals.
+- If a string already exists, Java reuses the same reference.
+- Helps in memory optimization and performance.
+
+---
+
+## 🔹 Immutability of Strings
+
+- Strings cannot be modified after creation.
+- Any operation creates a new object.
+- Example operations:
+  - replace
+  - concat
+  - case conversion
+
+### ✔ Why Strings are Immutable?
+
+- Security (used in URLs, file paths, DB connections)
+- Thread safety (no synchronization needed)
+- Memory optimization via SCP
+- Hashcode caching (used in collections like HashMap)
+
+---
+
+## 🔹 Difference Between `==` and `equals()`
+
+### 🔸 `==` Operator
+- Compares memory reference (address)
+- Checks if both variables point to the same object
+
+### 🔸 `equals()` Method
+- Compares actual content (values inside string)
+- Returns true if characters match
+
+---
+
+### 🔥 Important Cases
+
+#### Case 1: Using `new`
+- Objects are created in heap
+- Different memory locations
+- `==` → false
+- `equals()` → true
+
+#### Case 2: Using String Literals
+- Stored in String Constant Pool
+- Same reference reused
+- `==` → true
+- `equals()` → true
+
+---
+
+### ✅ Conclusion
+
+- Use `==` → when checking same object
+- Use `equals()` → when checking same value (MOST IMPORTANT)
+
+---
+
+## 🔹 Common String Methods
+
+### 📌 Basic Methods
+- `length()` → returns number of characters
+- `charAt(index)` → returns character at given index
+- `isEmpty()` → checks if string is empty
+- `trim()` → removes leading/trailing spaces
+
+---
+
+### 📌 Case Conversion
+- `toLowerCase()` → converts to lowercase
+- `toUpperCase()` → converts to uppercase
+
+---
+
+### 📌 Searching & Checking
+- `contains()` → checks if substring exists
+- `startsWith()` → checks prefix
+- `endsWith()` → checks suffix
+- `indexOf()` → returns first occurrence index
+- `lastIndexOf()` → returns last occurrence index
+
+---
+
+### 📌 Modification Methods (Return New String)
+
+- `replace(old, new)` → replaces characters/words
+- `replaceAll(regex, new)` → regex-based replacement
+- `concat()` → joins strings
+
+⚠️ Note: Original string remains unchanged
+
+---
+
+### 📌 Comparison Methods
+
+- `equals()` → content comparison
+- `equalsIgnoreCase()` → ignores case
+- `compareTo()` → lexicographical comparison
+  - `0` → equal
+  - `<0` → smaller
+  - `>0` → greater
+
+---
+
+### 📌 Substring Methods
+
+- `substring(start)` → from start index to end
+- `substring(start, end)` → start (inclusive), end (exclusive)
+- `subSequence(start, end)` → returns `CharSequence`
+
+---
+
+### 📌 Conversion Methods
+
+- `toCharArray()` → converts to char array
+- `valueOf()` → converts other types to string
+- `split()` → splits string into array
+
+---
+
+## 🔹 Lexicographical Comparison
+
+- Strings are compared character by character
+- Based on ASCII/Unicode values
+- Used in sorting and ordering
+
+---
+
+## 🔹 String Interning
+
+- Method: `intern()`
+- Moves string to String Constant Pool
+- Ensures memory optimization
+
+---
+
+## 🔹 Mutable Alternatives
+
+### 🔸 StringBuilder
+- Mutable (modifiable)
+- Faster
+- Not thread-safe
+
+### 🔸 StringBuffer
+- Mutable
+- Thread-safe
+- Slower than StringBuilder
+
+---
+
+## 🚀 Key Takeaways
+
+- String is an immutable object
+- Stored in Heap + String Constant Pool
+- `==` compares reference, `equals()` compares content
+- String operations create new objects
+- Use StringBuilder/StringBuffer for heavy modifications
+
+---
