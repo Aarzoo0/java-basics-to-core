@@ -1,0 +1,132 @@
+#Loops (while, do-while, for)
+
+## 1] while Loop
+
+### What it is
+
+Executes a block of code repeatedly **as long as the condition is true**.
+
+###  When to use
+
+* When the number of iterations is **not known beforehand**
+* Condition is checked **before execution**
+
+###  Syntax
+
+while (condition) {
+    // code executes
+}
+
+
+## 2] do-while Loop
+
+###  What it is
+
+Executes a block of code at least once, then repeats while condition is true.
+
+### 📌 When to use
+
+* When the code must run **at least once**
+* Condition is checked **after execution**
+
+###  Syntax
+
+do {
+    // code executes
+} while (condition);
+
+
+## 3]for Loop
+
+###  What it is
+
+A loop used when the number of iterations is **known beforehand**.
+
+### When to use
+
+* When you know how many times to run the loop
+
+###  Syntax
+
+for (initialization; condition; update) {
+    // code executes
+}
+
+
+## Key Components of for Loop
+
+* Initialization → starting point
+* Condition → loop runs while true
+* Update → increment/decrement
+
+
+
+
+## while vs do-while
+
+| Feature         | while            | do-while             |
+| --------------- | ---------------- | -------------------- |
+| Execution       | 0 or more times  | At least once        |
+| Condition check | Before execution | After execution      |
+| Use case        | General loops    | Menu-driven programs |
+
+
+
+## for vs while
+
+| Feature   | for loop         | while loop         |
+| --------- | ---------------- | ------------------ |
+| Use case  | Known iterations | Unknown iterations |
+| Structure | Compact          | More flexible      |
+
+---
+
+## Infinite Loop
+
+###  What it is
+
+A loop that never ends because the condition is always true.
+
+### Examples
+
+while (true) {
+    // infinite loop
+}
+
+for (;;) {
+    // infinite loop
+}
+
+
+## Loop Control Statements
+
+### break
+
+* Terminates the loop immediately
+
+for (int i = 1; i <= 5; i++) {
+    if (i == 3) {
+        break;
+    }
+    System.out.println(i);
+}
+
+### continue
+
+* Skips the current iteration
+
+for (int i = 1; i <= 5; i++) {
+    if (i == 3) {
+        continue;
+    }
+    System.out.println(i);
+}
+
+
+## Best Practices
+
+* Use `for` loop when iterations are known
+* Use `while` loop when condition-based repetition is needed
+* Use `do-while` when at least one execution is required
+* Avoid infinite loops unless intentionally used
+* Keep loop conditions simple and readable
