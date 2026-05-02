@@ -1,0 +1,164 @@
+----------- Arrays--------------------
+
+##  What is an Array
+
+###  Definition
+
+An array is a collection of elements of the same data type, stored in contiguous memory locations.
+
+###  When to use
+
+* When you need to store multiple values of the same type
+* Example: marks, numbers, names
+
+
+## Memory Allocation (Heap vs Stack)
+
+### How Arrays are Stored
+
+* Array object → stored in Heap memory
+* Reference variable → stored in Stack memory
+
+###  Explanation
+
+When you create an array:
+int[] arr = new int[5];
+
+* `arr` → reference variable (stored in stack)
+* `new int[5]` → actual array object (stored in heap)
+
+The stack variable `arr` holds the address/reference of the array in heap.
+
+
+### Visual Representation
+
+
+Stack Memory            Heap Memory
+-------------          -------------------
+arr  -----------►      [0, 0, 0, 0, 0]
+
+
+
+
+###  Key Points
+
+* Heap stores actual data (array elements)
+* Stack stores reference to that data
+* Multiple references can point to the same array
+* Arrays are objects in Java → always stored in heap
+
+
+
+### Example
+int[] a = {1, 2, 3};
+int[] b = a;
+
+b[0] = 100;
+
+System.out.println(a[0]); // Output: 100
+
+Both `a` and `b` point to the same array in heap
+
+
+##  Declaration of Array
+
+###  Syntax
+dataType[] arrayName;
+
+
+###  Example
+int[] arr;
+
+##  Initialization of Array
+
+###  Method 1: With size
+int[] arr = new int[5];
+
+###  Method 2: With values
+int[] arr = {10, 20, 30, 40, 50};
+
+
+##  Accessing Elements
+
+arrayName[index];
+### Example
+System.out.println(arr[0]); // first element
+
+
+##  Updating Elements
+arr[1] = 100;
+
+
+##  Looping through Array
+
+###  Using for loop
+for (int i = 0; i < arr.length; i++) {
+    System.out.println(arr[i]);
+}
+
+##  for-each Loop (Enhanced for loop)
+Simplified way to iterate over arrays.
+
+###  Syntax
+
+
+for (dataType variable : arrayName) {
+    // sout(variable)
+}
+
+
+###  Example
+for (int num : arr) {
+    System.out.println(num);
+}
+
+
+
+##  2D Array
+Array of arrays (matrix form).
+
+###  Syntax
+int[][] matrix = new int[3][3];
+
+###  Example
+int[][] matrix = {
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
+};
+
+
+##  Traversing 2D Array
+for (int i = 0; i < matrix.length; i++) {
+    for (int j = 0; j < matrix[i].length; j++) {
+        System.out.print(matrix[i][j] + " ");
+    }
+    System.out.println();
+}
+
+##  Jagged Array
+An array where each row can have different column sizes.
+
+###  Syntax
+int[][] jagged = new int[3][];
+
+
+###  Example
+jagged[0] = new int[2];
+jagged[1] = new int[3];
+jagged[2] = new int[1];
+
+
+##  Important Points
+
+* Array index starts from 0
+* Size is fixed after initialization
+* `length` gives size of array
+* Default values:
+
+  * int → 0
+  * boolean → false
+  * object → null
+
+
+
