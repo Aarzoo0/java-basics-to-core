@@ -1,0 +1,142 @@
+# Encapsulation
+
+## What is Encapsulation
+
+Encapsulation is the process of wrapping data (variables) and code (methods) together
+into a single unit (class) and restricting direct access to data.
+
+
+## Why Encapsulation is Used
+
+* Protects data from unauthorized access
+* Improves security
+* Helps in data hiding
+* Makes code more maintainable
+
+
+
+##  How to Achieve Encapsulation
+
+1. Declare variables as private
+2. Provide public getter and setter methods
+
+
+
+## Example Structure
+
+class ClassName {
+    private int variable;
+
+    public int getVariable() {
+        return variable;
+    }
+
+    public void setVariable(int variable) {
+        this.variable = variable;
+    }
+}
+
+
+
+## Real Example
+
+class Student {
+    private String name;
+    private int age;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+}
+```
+
+---
+
+## Using Encapsulation
+
+public class Main {
+    public static void main(String[] args) {
+
+        Student s = new Student();
+
+        s.setName("Aarzoo");
+        s.setAge(20);
+
+        System.out.println(s.getName());
+        System.out.println(s.getAge());
+    }
+}
+
+
+## Advantages
+
+* Data is hidden from outside class
+* Can control how data is modified
+* Flexibility to change implementation later
+* Improves code readability
+
+
+## 🔹 Important Points
+
+* Use `private` for variables
+* Use `public` getters/setters
+* Naming convention:
+
+  * `getVariableName()`
+  * `setVariableName()`
+
+---
+
+## Validation using Encapsulation
+
+You can add conditions inside setters:
+
+public void setAge(int age) {
+    if (age > 0) {
+        this.age = age;
+    } else {
+        System.out.println("Invalid age");
+    }
+}
+
+
+
+##  Without Encapsulation (Bad Practice)
+
+
+class Student {
+    public String name;
+    public int age;
+}
+
+ Anyone can directly change values →  unsafe
+
+
+## With Encapsulation (Good Practice)
+
+class Student {
+    private String name;
+    private int age;
+}
+
+Controlled access →  safe
+
+
+## Best Practices
+
+* Always keep variables private
+* Provide only required getters/setters
+* Add validation logic in setters
+* Avoid unnecessary exposure of data
