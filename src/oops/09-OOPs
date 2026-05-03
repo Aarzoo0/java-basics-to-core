@@ -1,0 +1,123 @@
+#  Object-Oriented Programming (OOP)
+
+## What is OOP
+OOP (Object-Oriented Programming) is a programming paradigm based on objects and classes,
+used to design programs in a structured and reusable way.
+
+
+
+##  Core Concepts of OOP
+
+* Encapsulation → Wrapping data + methods together
+* Inheritance → Acquiring properties of another class
+* Polymorphism → One action, many forms
+* Abstraction → Hiding implementation details
+
+
+
+##  Class
+
+A class is a blueprint/template used to create objects.
+
+It has -
+* Variables (data / properties)
+* Methods (behavior / functions)
+
+### Syntax
+
+class ClassName {
+    // variables
+    // methods
+}
+
+
+##  Object
+An object is an instance of a class.
+
+### Syntax
+ClassName obj = new ClassName();
+
+
+
+## Example (Class & Object)
+
+class Student {
+    String name;
+    int age;
+
+    void display() {
+        System.out.println(name + " " + age);
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        s1.name = "Aarzoo";
+        s1.age = 20;
+
+        s1.display();
+    }
+}
+
+---
+
+##  Method Overloading (Compile-time Polymorphism)
+Defining multiple methods with the same name but different parameters.
+
+* Method name must be same
+* Parameters must be different (type / number / order)
+* Return type alone cannot differentiate
+
+### Example
+
+class Calculator {
+
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+}
+
+
+
+## Method Overriding (Runtime Polymorphism)
+
+A subclass provides a specific implementation of a method already defined in parent class.
+
+* Same method name
+* Same parameters
+* Requires inheritance
+* Uses runtime polymorphism
+
+### Example
+
+class Animal {
+    void sound() {
+        System.out.println("Animal makes sound");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+
+
+## Key Differences: Overloading vs Overriding
+
+| Feature            | Method Overloading                 | Method Overriding        |
+| ------------------ | ---------------------------------- | ------------------------ |
+| Definition         | Same method name, different params | Redefining parent method |
+| Polymorphism Type  | Compile-time                       | Runtime                  |
+| Inheritance Needed | No                                 | Yes                      |
+| Parameters         | Must differ                        | Must be same             |
+
+
+

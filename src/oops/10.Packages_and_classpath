@@ -1,0 +1,159 @@
+#  Packages and Classpath
+
+## What is a Package
+
+A package in Java is a namespace that groups related classes and interfaces together.
+
+* Avoid naming conflicts
+* Organize code properly
+* Improve readability and maintainability
+
+
+
+##  Types of Packages
+
+### 1. Built-in Packages
+
+Provided by Java
+
+Examples:
+
+* `java.util`
+* `java.lang`
+* `java.io`
+
+
+
+###  2. User-defined Packages
+
+Created by developers
+
+##Creating a Package
+
+### Syntax
+package packageName;
+
+
+### Example
+package OOPs;
+
+## Important Rules
+
+* Package statement must be first line in the file
+* Folder structure should match package name
+* Example:
+
+OOPs/
+ └── Car.java
+
+
+
+## Compiling with Package
+```bash
+javac -d . Car.java
+
+ `-d .` creates the folder structure automatically
+
+
+
+## Running a Packaged Class
+
+```bash
+java OOPs.Car
+```
+
+
+##  Accessing Classes from Another Package
+
+### Using import
+import OOPs.Car;
+
+
+OR
+
+import OOPs.*;
+
+
+
+
+##  Access Modifiers & Packages
+
+| Modifier  | Same Class | Same Package | Different Package   |
+| --------- | ---------- | ------------ | ------------------- |
+| public    | ✅          | ✅            | ✅                   |
+| default   | ✅          | ✅            | ❌                   |
+| protected | ✅          | ✅            | ⚠ (via inheritance) |
+| private   | ✅          | ❌            | ❌                   |
+
+
+#  Classpath
+
+##  What is Classpath
+Classpath is a path that tells JVM where to find compiled `.class` files.
+
+## Why it is Needed
+
+* To locate classes during execution
+* To run programs from different directories
+* To use external libraries
+
+
+
+## Setting Classpath
+
+###  Temporarily (Command Line)
+
+```bash
+set classpath=.;
+```
+
+ `.` means current directory
+
+---
+
+### Run with Classpath
+
+```bash
+java -cp . OOPs.Car
+```
+
+
+
+##  Common Classpath Issues
+
+*  `ClassNotFoundException`
+*  Wrong folder structure
+*  Package name not matching directory
+
+---
+
+##  Example Structure
+
+project/
+ └── OOPs/
+      └── Car.class
+```
+
+Run command:
+
+```bash
+java OOPs.Car
+```
+
+---
+
+##  Key Points
+
+* Package = logical grouping
+* Classpath = physical location path
+* Packages improve structure
+* Classpath helps JVM find classes
+
+---
+
+##  Best Practices
+
+* Use meaningful package names (lowercase)
+* Follow folder structure properly
+* Keep one public class per file
+* Always compile using `-d .` when using packages
