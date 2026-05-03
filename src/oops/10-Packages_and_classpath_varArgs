@@ -157,3 +157,109 @@ java OOPs.Car
 * Follow folder structure properly
 * Keep one public class per file
 * Always compile using `-d .` when using packages
+
+
+------------- Variable Arguments (VarArgs)-----------------------------
+## What are VarArgs
+VarArgs (Variable Arguments) allow a method to accept any number of arguments** of the same type.
+
+
+## Why use VarArgs
+
+* Avoid method overloading for multiple parameters
+* Makes code flexible and clean
+* Useful when number of inputs is unknown
+
+
+
+## Syntax
+
+returnType methodName(dataType... variableName) {
+    // code
+}
+```
+
+`...` (three dots) is called ellipsis
+
+
+## Example
+
+class Example {
+
+    void printNumbers(int... numbers) {
+        for (int num : numbers) {
+            System.out.println(num);
+        }
+    }
+}
+
+
+
+## Usage
+
+public class Main {
+    public static void main(String[] args) {
+
+        Example obj = new Example();
+
+        obj.printNumbers(1);
+        obj.printNumbers(1, 2, 3);
+        obj.printNumbers(10, 20, 30, 40);
+    }
+}
+
+
+## How VarArgs Works Internally
+
+* VarArgs is treated as an array internally
+
+void method(int... nums)
+
+is similar to:
+
+void method(int[] nums)
+
+
+
+
+## Example: Sum using VarArgs
+
+int sum(int... numbers) {
+    int total = 0;
+
+    for (int num : numbers) {
+        total += num;
+    }
+
+    return total;
+}
+
+## Rules of VarArgs
+
+* Only one varargs parameter allowed per method
+* It must be the **last parameter
+
+
+
+### ✔ Valid Example
+
+void method(String name, int... marks)
+
+
+### Invalid Example
+void method(int... a, int b)   // ERROR
+
+## VarArgs vs Array
+
+| Feature     | VarArgs                  | Array                |
+| ----------- | ------------------------ | -------------------- |
+| Syntax      | int... nums              | int[] nums           |
+| Flexibility | Can pass values directly | Need to create array |
+| Usage       | Cleaner                  | Slightly verbose     |
+
+
+##  Best Practices
+
+* Use VarArgs when number of inputs is unknown
+* Avoid overusing (can reduce readability)
+* Prefer for utility methods like sum, print, etc.

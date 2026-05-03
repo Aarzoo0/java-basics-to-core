@@ -1,0 +1,218 @@
+#  Constructors in Java
+
+##  What is a Constructor
+
+
+A constructor is a special method used to initialize objects.
+
+
+
+## Key Features
+
+* Same name as the class
+* No return type (not even `void`)
+* Called automatically when object is created
+* Used to initialize object data
+
+
+
+## Syntax
+
+class ClassName {
+
+    ClassName() {
+        // constructor body
+    }
+}
+
+
+
+
+## Example
+
+class Student {
+
+    String name;
+
+    Student() {
+        name = "Default Name";
+    }
+}
+
+
+
+
+## Types of Constructors
+
+### 1. Default Constructor
+
+A constructor with no parameters
+
+### Example
+
+class Car {
+
+    Car() {
+        System.out.println("Car created");
+    }
+}
+
+
+---
+
+###  2. Parameterized Constructor
+
+A constructor with parameters to initialize values
+
+### Example
+class Car {
+
+    String model;
+    int speed;
+
+    Car(String model, int speed) {
+        this.model = model;
+        this.speed = speed;
+    }
+}
+
+
+
+
+###  3. Copy Constructor (Conceptual)
+
+Creates a new object using another object's values
+
+### Example
+
+class Car {
+
+    String model;
+
+    Car(Car c) {
+        this.model = c.model;
+    }
+}
+
+
+## this Keyword in Constructor
+
+Refers to the current object
+
+
+### Example
+
+class Student {
+
+    String name;
+
+    Student(String name) {
+        this.name = name;
+    }
+}
+
+
+## Constructor Overloading
+
+
+Multiple constructors with different parameters
+
+### Example
+
+class Car {
+
+    String model;
+    int speed;
+
+    Car() {
+        model = "Default";
+    }
+
+    Car(String model) {
+        this.model = model;
+    }
+
+    Car(String model, int speed) {
+        this.model = model;
+        this.speed = speed;
+    }
+}
+
+
+
+
+## Constructor Chaining
+
+
+Calling one constructor from another using `this()`
+
+
+###  Example
+
+class Car {
+
+    String model;
+    int speed;
+
+    Car() {
+        this("Default", 0);
+    }
+
+    Car(String model, int speed) {
+        this.model = model;
+        this.speed = speed;
+    }
+}
+
+
+
+
+##  super() in Constructors
+
+Used to call parent class constructor
+
+
+### Example
+
+class Animal {
+    Animal() {
+        System.out.println("Animal created");
+    }
+}
+
+class Dog extends Animal {
+    Dog() {
+        super();
+        System.out.println("Dog created");
+    }
+}
+
+
+
+
+## Important Rules
+
+* Constructor name must match class name
+* No return type
+* Called automatically when object is created
+* If no constructor is written → Java provides default constructor
+
+
+
+## Difference: Constructor vs Method
+
+| Feature     | Constructor          | Method            |
+| ----------- | -------------------- | ----------------- |
+| Name        | Same as class        | Any name          |
+| Return type | No return type       | Has return type   |
+| Purpose     | Initialize object    | Perform operation |
+| Invocation  | Called automatically | Called manually   |
+
+
+
+##  Best Practices
+
+* Use constructors to initialize required fields
+* Prefer parameterized constructors
+* Use `this` for clarity
+* Avoid too many constructors (use builder/setters if needed)

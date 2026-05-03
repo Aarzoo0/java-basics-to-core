@@ -1,0 +1,214 @@
+# Inheritance
+
+##  What is Inheritance
+
+Inheritance is a mechanism in Java where one class acquires the properties
+and behaviors (fields and methods) of another class.
+
+
+
+## Why use Inheritance
+
+* Code reusability
+* Reduces redundancy
+* Improves maintainability
+* Supports method overriding (polymorphism)
+
+
+
+##  Basic Terminology
+
+* Parent Class (Superclass) → class whose properties are inherited
+* Child Class (Subclass) → class that inherits properties
+
+
+
+##  Syntax
+
+class Parent {
+    // properties and methods
+}
+
+class Child extends Parent {
+    // additional properties and methods
+}
+
+
+
+## Example
+
+class Animal {
+    void eat() {
+        System.out.println("Animal eats");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog barks");
+    }
+}
+
+
+
+
+##  Usage
+public class Main {
+    public static void main(String[] args) {
+
+        Dog d = new Dog();
+
+        d.eat();   // inherited method
+        d.bark();  // own method
+    }
+}
+
+
+
+
+##  Types of Inheritance in Java
+
+### 1. Single Inheritance
+
+One child inherits from one parent
+
+class A {}
+class B extends A {}
+
+
+### 2. Multilevel Inheritance
+
+Chain of inheritance
+
+class A {}
+class B extends A {}
+class C extends B {}
+
+
+### 3. Hierarchical Inheritance
+
+Multiple children inherit from one parent
+
+class A {}
+class B extends A {}
+class C extends A {}
+
+
+---
+
+###  Multiple Inheritance (Not supported with classes)
+
+class A {}
+class B {}
+class C extends A, B {}  // Not allowed
+
+
+--> Java avoids ambiguity (Diamond Problem)
+
+## super Keyword
+
+### What it is
+
+Used to refer to parent class members
+
+
+
+### Call parent method
+
+super.methodName();
+
+
+###  Call parent constructor
+
+super();
+
+
+
+## Example with super
+
+class Animal {
+    void sound() {
+        System.out.println("Animal sound");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        super.sound();
+        System.out.println("Dog barks");
+    }
+}
+
+
+
+
+##  Constructor in Inheritance
+
+* Parent constructor is called first
+* If not written, Java adds `super()` automatically
+
+
+
+##  Method Overriding in Inheritance
+
+Child class can change parent method behavior
+
+class Animal {
+    void sound() {
+        System.out.println("Animal sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+---
+
+##  Access Modifiers & Inheritance
+
+| Modifier  | Accessible in Child |
+| --------- | ------------------- |
+| public    | ✅                   |
+| protected | ✅                   |
+| default   | ⚠ (same package)    |
+| private   | ❌                   |
+
+
+
+##  Advantages
+
+* Reusability of code
+* Cleaner structure
+* Easier maintenance
+* Supports polymorphism
+
+
+
+## Disadvantages
+
+* Tight coupling between classes
+* Can increase complexity if overused
+
+
+
+## Best Practices
+
+* Use inheritance only when there is "is-a" relationship
+
+  * Dog is a Animal ✅
+  * Car is a Engine ❌
+
+* Avoid deep inheritance chains
+
+* Prefer composition when appropriate
+
+## Key Points
+
+* Use `extends` keyword
+* Java does not support multiple inheritance with classes
+* `super` is used to access parent
+* Enables method overriding

@@ -1,4 +1,4 @@
-package oops;
+package oops.encapsulation;
 
 // Encapsulation
 public class BankingSystem {
