@@ -1,0 +1,94 @@
+# Abstraction
+
+## What is Abstraction
+
+Abstraction is the process of hiding implementation details and showing only essential features.
+
+
+
+## Real-Life Example
+
+* Car → you drive without knowing engine internals
+* ATM → you withdraw money without knowing backend logic
+
+
+
+##  How to Achieve Abstraction in Java
+
+1. Abstract Class
+2. Interface
+
+
+
+# Abstract Class
+
+##  What it is
+
+A class declared with `abstract` keyword.
+
+* Can have abstract methods (no body)
+* Can have normal methods (with body)
+
+
+
+## Syntax
+
+abstract class ClassName {
+    abstract void methodName(); // no body
+}
+
+
+## Example
+
+abstract class Animal {
+
+    abstract void sound(); // abstract method
+
+    void eat() {
+        System.out.println("Animal eats");
+    }
+}
+
+
+
+## Implementation
+
+class Dog extends Animal {
+
+    @Override
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+
+
+## Key Points (Abstract Class)
+
+* Cannot create object directly
+* Can have constructors
+* Can have instance variables
+* Supports inheritance
+
+
+
+### Use Abstract Class:
+
+* When classes share common behavior
+* When you need constructors or state
+
+
+##  Advantages
+
+* Hides complexity
+* Improves security
+* Makes code flexible
+* Supports loose coupling
+
+
+## Best Practices
+
+* Use meaningful abstraction
+* Don’t over-abstract simple logic
+* Prefer interface for flexibility
+* Use abstract class for shared code
