@@ -1,0 +1,130 @@
+# Polymorphism in Java
+
+
+### Definition
+
+Polymorphism means "one name, many forms".
+
+It allows a single method or object to behave differently based on context.
+
+
+
+## Types of Polymorphism
+
+### 1. Compile-time Polymorphism (Static)
+
+Achieved using: Method Overloading
+
+
+###  2. Runtime Polymorphism (Dynamic)
+
+Achieved using: Method Overriding (Inheritance)
+
+
+
+##  Method Overloading
+
+Multiple methods with same name but different parameters
+
+
+### Example
+class Calculator {
+
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+}
+
+### key Points
+
+* Same method name
+* Different parameters
+* Happens at compile-time
+
+
+## Method Overriding
+
+Child class provides new implementation of parent method
+
+
+### Example
+class Animal {
+    void sound() {
+        System.out.println("Animal sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+
+### Key Points
+
+* Same method name
+* Same parameters
+* Requires inheritance
+* Happens at runtime
+
+
+## Runtime Polymorphism
+
+Method call is resolved at runtime using parent reference
+
+
+###  Example
+
+Animal a = new Dog();
+a.sound();
+
+
+--> Calls Dog's method, not Animal's
+
+
+
+## Upcasting
+
+Using parent reference to hold child object
+
+Animal a = new Dog();
+
+
+## Downcasting
+
+Casting parent reference back to child
+Dog d = (Dog) a;
+
+
+## Difference: Overloading vs Overriding
+
+| Feature           | Overloading  | Overriding |
+| ----------------- | ------------ | ---------- |
+| Parameters        | Different    | Same       |
+| Inheritance       | Not required | Required   |
+| Binding           | Compile-time | Runtime    |
+| Polymorphism Type | Static       | Dynamic    |
+
+
+
+## Advantages
+
+* Improves flexibility
+* Enhances code readability
+* Supports dynamic behavior
+* Promotes code reuse
+
+
+
+## Best Practices
+
+* Use overloading for similar operations
+* Use overriding for changing behavior
+* Always use `@Override` annotation
+* Prefer runtime polymorphism for flexibility
