@@ -1,0 +1,134 @@
+# static Keyword
+
+
+`static` means the member belongs to the class, not the object.
+
+
+##  static Variable
+
+A variable shared among all objects of a class.
+
+
+### Example
+
+class Test {
+    static int count = 0;
+}
+
+
+👉 Only one copy exists
+
+
+
+## static Method
+
+A method that can be called without creating an object
+
+
+###  Example
+
+class Test {
+    static void show() {
+        System.out.println("Static method");
+    }
+}
+```
+
+Usage:
+Test.show();
+
+
+
+## static Block
+
+Executed once when class is loaded
+
+
+###  Example
+
+static {
+    System.out.println("Static block executed");
+}
+
+
+
+
+## 🔹 Important Points
+
+* Static members belong to class
+* Access using class name
+* Cannot directly access non-static members
+
+
+
+# final Keyword
+
+`final` means constant / cannot be changed
+
+
+##  final Variable
+
+Value cannot be modified after assignment
+
+
+### Example
+
+final int x = 10;
+// x = 20; ❌ error
+
+
+
+##  final Method
+
+Cannot be overridden
+
+
+
+### Example
+
+class Parent {
+    final void show() {}
+}
+
+##  final Class
+
+Cannot be inherited
+
+
+
+### Example
+final class A {}
+// class B extends A {} ❌ error
+
+
+
+
+#  static vs final
+
+| Feature  | static               | final           |
+| -------- | -------------------- | --------------- |
+| Meaning  | Belongs to class     | Cannot change   |
+| Variable | Shared among objects | Constant        |
+| Method   | No object needed     | Cannot override |
+| Class    | Not applicable       | Cannot extend   |
+
+
+
+#  Best Practices
+
+* Use `static` for shared data
+* Use `final` for constants
+* Use `static final` for constants
+
+# Constructors cannot be static because static members belong to the class,
+while constructors are used to initialize objects.
+Static Block can be closest alternative
+
+# A class can be final but not static (top-level)
+ Static is allowed only for nested classes
+
+
+##  Example
+static final double PI = 3.14;
+
+👉 Constant + shared

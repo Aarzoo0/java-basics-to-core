@@ -1,0 +1,122 @@
+#  Access Modifiers
+
+## What are Access Modifiers
+
+
+Access modifiers define the visibility and accessibility of classes, variables, methods, and constructors.
+
+
+
+##  Types of Access Modifiers
+
+1. `public`
+2. `private`
+3. `protected`
+4. `default` (no keyword)
+
+
+
+# 1. public
+
+### Access Level
+
+* Accessible from anywhere
+
+### Example
+
+public class Test {
+    public int x = 10;
+}
+
+--the class and the variable we can access from everywhere
+
+
+#  2. private
+
+### Access Level
+
+Accessible only within the same class
+
+###  Example
+
+class Test {
+    private int x = 10;
+}
+
+
+--Used in Encapsulation
+
+
+
+
+#  3. protected
+
+###  Access Level
+
+* Same package
+* Different package via inheritance
+
+### Example
+
+class Test {
+    protected int x = 10;
+}
+
+
+#  4. default (no modifier)
+
+###  Access Level
+
+* Accessible only within same package
+
+### Example
+class Test {
+    int x = 10; // default
+}
+
+
+
+# Access Summary Table
+
+| Modifier  | Same Class | Same Package | Different Package  | Subclass (Different Package)  |
+| --------- | ---------- | ------------ | -----------------  | ----------------------------  |
+| public    | ✅          | ✅            | ✅              | ✅                            |
+| protected | ✅          | ✅            | ❌              | ✅                            |
+| default   | ✅          | ✅            | ❌              | ❌                            |
+| private   | ✅          | ❌            | ❌              | ❌                            |
+
+
+
+# Access Modifiers with Classes
+
+* Only `public` and `default` allowed for classes
+
+
+## ✔ Valid
+
+public class A {}
+class B {}
+
+
+## ❌ Invalid
+
+private class A {}   // not allowed
+protected class A {} // not allowed
+
+
+
+# Why Access Modifiers are Important
+
+* Data hiding
+* Security
+* Controlled access
+* Maintainable code
+
+
+
+# Best Practices
+
+* Use `private` for variables
+* Use `public` getters/setters
+* Use `protected` for inheritance
+* Use `default` for package-level access
