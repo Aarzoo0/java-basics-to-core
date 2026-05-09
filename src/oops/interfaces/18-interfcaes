@@ -1,0 +1,190 @@
+# Interfaces
+
+
+
+# What is an Interface
+
+An interface is a blueprint of a class.
+
+It contains:
+
+* abstract methods
+* constants
+* default/static methods (Java 8+)
+
+
+
+##  Why Interfaces are Used
+
+* Achieve abstraction
+* Achieve multiple inheritance
+* Define common behavior
+* Loose coupling
+
+
+
+# Syntax
+
+interface Vehicle {
+    void start();
+}
+
+
+# Implementing an Interface
+
+class Car implements Vehicle {
+
+    @Override
+    public void start() {
+        System.out.println("Car starts");
+    }
+}
+
+
+
+# Important Rules
+
+## Interface methods are:
+
+* `public`
+* `abstract`
+  (by default)
+
+
+## Interface variables are:
+
+* `public`
+* `static`
+* `final`
+  (by default)
+
+
+# Example
+
+interface Demo {
+
+    int x = 10;
+
+    void show();
+}
+
+
+Equivalent to:
+
+public static final int x = 10;
+public abstract void show();
+
+
+
+
+# Multiple Inheritance using Interfaces
+
+Java does not support multiple inheritance with classes.
+
+But interfaces allow it.
+
+
+## 📌 Example
+
+interface A {
+    void show();
+}
+
+interface B {
+    void display();
+}
+
+class Test implements A, B {
+
+    public void show() {}
+
+    public void display() {}
+}
+
+
+
+# Default Methods (Java 8)
+
+Interfaces can contain methods with body using `default`.
+
+
+##  Example
+
+interface Vehicle {
+
+    default void stop() {
+        System.out.println("Vehicle stopped");
+    }
+}
+
+
+
+#  Static Methods in Interface
+
+interface Demo {
+
+    static void hello() {
+        System.out.println("Hello");
+    }
+}
+
+
+Usage:
+Demo.hello();
+
+
+
+
+# Functional Interface
+
+An interface with only ONE abstract method.
+
+
+
+## 📌 Example
+
+@FunctionalInterface
+interface Test {
+    void show();
+}
+
+
+Used in:
+
+* Lambda expressions
+* Streams API
+
+## Why Interfaces Don’t Have Constructors-
+
+ * Constructors are used to initialize objects
+
+ * But An interface cannot create objects
+
+ * So Interfaces do not need constructors
+
+
+
+#  Interface vs Abstract Class
+
+| Feature              | Interface           | Abstract Class     |
+| -------------------- | ------------------- | ------------------ |
+| Methods              | Abstract by default | Abstract + Normal  |
+| Variables            | Constants only      | Instance variables |
+| Multiple Inheritance | ✅ Yes              | ❌ No               |
+| Constructors         | ❌ No               | ✅ Yes              |
+| Object creation	   | ❌ No	              |❌ Directly no
+
+# 🔹 Best Practices
+
+* Use interface for contracts
+* Use abstract class for shared state/behavior
+* Prefer interface for flexibility
+
+---
+
+# 🔹 Real-world Examples
+
+* Payment Gateway
+* Notification Service
+* Database Drivers
+* API Clients
