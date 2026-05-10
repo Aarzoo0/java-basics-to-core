@@ -1,0 +1,173 @@
+#  Wrapper Classes in Java
+
+
+
+#  What are Wrapper Classes?
+
+Wrapper classes are objects that wrap primitive data types into objects.
+
+Java provides wrapper classes for all primitive types.
+
+
+
+# Primitive vs Wrapper
+
+| Primitive | Wrapper Class |
+| --------- | ------------- |
+| byte      | Byte          |
+| short     | Short         |
+| int       | Integer       |
+| long      | Long          |
+| float     | Float         |
+| double    | Double        |
+| char      | Character     |
+| boolean   | Boolean       |
+
+
+#  Why Wrapper Classes are Needed
+
+Java collections store only objects.
+
+Examples:
+
+* ArrayList
+* HashMap
+* HashSet
+
+Wrapper classes help convert primitives into objects.
+
+
+# Example
+
+int x = 10;
+
+Integer obj = Integer.valueOf(x);
+
+
+#  Boxing
+
+Converting primitive → wrapper object
+
+
+
+## Example
+int num = 100;
+
+Integer obj = Integer.valueOf(num);
+
+
+
+# Unboxing
+
+Converting wrapper object → primitive
+
+
+##  Example
+Integer obj = 200;
+
+int num = obj.intValue();
+
+
+
+# Autoboxing
+
+Automatic primitive → wrapper conversion
+
+
+
+##  Example
+
+Integer obj = 50;
+
+
+Compiler internally:
+
+Integer.valueOf(50)
+
+
+
+
+# Auto-unboxing
+
+Automatic wrapper → primitive conversion
+
+
+## Example
+
+Integer obj = 70;
+
+int num = obj;
+
+
+Compiler internally:
+obj.intValue()
+
+
+
+
+#  Useful Wrapper Methods
+
+| Method      | Purpose                    |
+| ----------- | -------------------------- |
+| parseInt()  | String → int               |
+| valueOf()   | Primitive/String → Wrapper |
+| toString()  | Convert to String          |
+| compareTo() | Compare values             |
+
+
+
+#  Example
+
+String s = "100";
+
+int x = Integer.parseInt(s);
+
+
+
+#  Why Collections Need Wrapper Classes
+
+ArrayList<int> ❌
+
+Valid:
+ArrayList<Integer> ✅
+
+
+
+
+#  Null Support
+
+Primitive:
+int x = null; ❌
+
+Wrapper:
+Integer x = null; ✅
+
+
+
+#  Important Points
+
+* Wrapper classes are immutable
+* Stored in heap memory
+* Allow use of utility methods
+* Needed in generics & collections
+
+
+# Performance Note
+
+Primitive types are faster than wrappers because wrappers create objects.
+
+
+
+#  Best Practices
+
+* Use primitives for performance
+* Use wrappers for collections/APIs
+* Avoid unnecessary boxing/unboxing
+
+
+#  Real-world Usage
+
+* Collections Framework
+* Database APIs
+* JSON processing
+* Frameworks like Spring/Hibernate
