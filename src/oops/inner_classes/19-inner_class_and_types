@@ -1,0 +1,167 @@
+# Inner Classes
+
+# What is an Inner Class
+
+An inner class is a class declared inside another class.
+
+
+
+## Why Use Inner Classes
+
+* Better grouping of related classes
+* Improves encapsulation
+* Cleaner code structure
+* Access outer class members directly
+
+
+# Types of Inner Classes
+
+Java supports 4 types of inner classes:
+
+1. Member Inner Class
+2. Static Nested Class
+3. Local Inner Class
+4. Anonymous Inner Class
+
+
+
+#  1. Member Inner Class
+
+A non-static class declared inside another class.
+
+
+##  Features
+
+* Can access all outer class members
+* Requires outer class object
+
+
+##  Syntax
+
+class Outer {
+
+    class Inner {
+
+    }
+}
+
+
+## Object Creation
+
+Outer o = new Outer();
+Outer.Inner i = o.new Inner();
+
+
+
+
+# 2. Static Nested Class
+
+
+A static class declared inside another class.
+
+
+##  Features
+
+* Belongs to outer class
+* Does not require outer object
+* Can access only static members directly
+
+
+## Syntax
+
+class Outer {
+
+    static class Inner {
+
+    }
+}
+
+
+##  Object Creation
+
+Outer.Inner obj = new Outer.Inner();
+
+
+# 3. Local Inner Class
+
+A class declared inside a method.
+
+
+##  Features
+
+* Accessible only inside that method
+* Cannot use access modifiers
+* Useful for method-specific logic
+
+
+## Syntax
+
+void show() {
+
+    class Local {
+
+    }
+}
+
+
+
+
+# 4. Anonymous Inner Class
+
+An inner class without a name.
+
+Used for:
+
+* One-time implementation
+* Method overriding
+* Interfaces/abstract classes
+
+
+
+##  Syntax
+
+Animal a = new Animal() {
+
+    void sound() {
+        System.out.println("Dog barks");
+    }
+};
+
+
+
+
+#  Advantages of Inner Classes
+
+* Better encapsulation
+* Cleaner organization
+* Improved readability
+* Access outer members directly
+
+
+#  Important Points
+
+| Type                  | Needs Outer Object? | Can be static?  |
+| --------------------- | ------------------- | ----------------|
+| Member Inner Class    | ✅ Yes              | ❌ No           |
+| Static Nested Class   | ❌ No               | ✅ Yes          |
+| Local Inner Class     | Depends             | ❌ No           |
+| Anonymous Inner Class | Depends             | ❌ No           |
+
+
+
+#  Best Practices
+
+* Use member inner class for tightly coupled classes
+* Use static nested class if outer object not needed
+* Use anonymous class for quick implementation
+* Avoid excessive nesting
+
+
+
+#  Real-world Usage
+
+* Event handling
+* GUI applications
+* Callbacks
+* Framework internals
+* Collections API
