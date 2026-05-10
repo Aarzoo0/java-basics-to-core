@@ -1,0 +1,244 @@
+# Exception Handling in Java
+
+
+# What is an Exception?
+
+An exception is an unwanted event that interrupts the normal flow of a
+program during execution.
+
+
+#  Why Exception Handling?
+
+* Prevent program crash
+* Handle runtime errors gracefully
+* Maintain normal application flow
+* Improve debugging and reliability
+
+
+#  Types of Exceptions
+
+## 1. Checked Exceptions
+
+Checked at compile time.
+
+Examples:
+
+* IOException
+* SQLException
+* FileNotFoundException
+
+
+
+## 2. Unchecked Exceptions
+
+Occur at runtime.
+
+Examples:
+
+* ArithmeticException
+* NullPointerException
+* ArrayIndexOutOfBoundsException
+
+
+
+#  Exception Hierarchy
+
+Object
+  |
+Throwable
+ ├── Error
+ └── Exception
+      ├── Checked Exceptions
+      └── RuntimeException (Unchecked)
+
+
+# try and catch
+
+* `try` → risky code
+* `catch` → handles exception
+
+##  Syntax
+
+try {
+
+}
+catch(Exception e) {
+
+}
+
+
+
+## Example
+
+try {
+    int result = 10 / 0;
+}
+catch(ArithmeticException e) {
+    System.out.println("Cannot divide by zero");
+}
+
+
+
+
+# finally Block
+
+`finally` always executes whether exception occurs or not.
+
+Used for:
+
+* closing resources
+* cleanup code
+
+
+
+##  Example
+
+finally {
+    System.out.println("Cleanup completed");
+}
+
+
+
+
+#  throw Keyword
+
+## Definition
+
+Used to manually throw an exception.
+
+
+##  Example
+
+throw new ArithmeticException("Invalid operation");
+
+
+# throws Keyword
+
+Used to declare exceptions in method signature.
+
+
+
+##  Example
+void readFile() throws IOException {
+
+}
+
+
+
+#  Difference: throw vs throws
+
+| Feature     | throw                    | throws             |
+| ----------- | ------------------------ | ------------------ |
+| Used for    | Throw exception manually | Declare exceptions |
+| Location    | Inside method            | Method signature   |
+| Followed by | Exception object         | Exception class    |
+
+
+
+#  Multiple catch Blocks
+
+try {
+
+}
+catch(ArithmeticException e) {
+
+}
+catch(ArrayIndexOutOfBoundsException e) {
+
+}
+catch(Exception e){
+
+}
+
+
+
+#  try-with-resources
+
+Automatically closes resources after use.
+
+Introduced in Java 7.
+
+
+## Syntax
+
+try(Resource res = new Resource()) {
+
+}
+
+
+
+
+#  Advantages
+
+* Automatic resource management
+* Cleaner code
+* Prevents memory leaks
+
+
+
+# Custom Exception
+
+User-defined exception created by extending Exception class.
+
+
+
+## Syntax
+
+class InvalidAgeException extends Exception {
+
+}
+
+
+## What is Exception Propagation in Java?
+
+An exception travels from one method to another method until it gets handled.
+
+
+
+
+#  Best Practices
+
+* Catch specific exceptions
+* Avoid empty catch blocks
+* Use finally for cleanup
+* Create meaningful exception messages
+* Use custom exceptions for business logic
+
+
+
+#  Common Runtime Exceptions
+
+| Exception                      | Cause              |
+| ------------------------------ | ------------------ |
+| ArithmeticException            | Divide by zero     |
+| NullPointerException           | Null reference     |
+| ArrayIndexOutOfBoundsException | Invalid index      |
+| NumberFormatException          | Invalid conversion |
+
+
+
+# Exception Propagation
+
+Exceptions move up the call stack until handled.
+
+
+
+#  Important Keywords Summary
+
+| Keyword | Purpose                  |
+| ------- | ------------------------ |
+| try     | risky code               |
+| catch   | handle exception         |
+| finally | always execute           |
+| throw   | manually throw exception |
+| throws  | declare exception        |
+
+
+
+# Real-world Usage
+
+* Banking systems
+* File handling
+* Database operations
+* APIs
+* Authentication systems
