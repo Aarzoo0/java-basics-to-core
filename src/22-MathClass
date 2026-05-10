@@ -1,0 +1,156 @@
+#  Math Class in Java
+
+
+
+`Math` is a built-in utility class in Java that provides mathematical 
+operations and functions.
+
+Package:
+java.lang.Math
+
+
+Since it belongs to `java.lang`,
+no import is required.
+
+
+#  Important Point
+
+All methods in Math class are: static
+
+So we use: Math.methodName()
+
+No object creation needed.
+
+
+#  Commonly Used Methods
+
+| Method        | Purpose               |
+| ------------- | --------------------- |
+| Math.max()    | Maximum value         |
+| Math.min()    | Minimum value         |
+| Math.sqrt()   | Square root           |
+| Math.pow()    | Power                 |
+| Math.abs()    | Absolute value        |
+| Math.random() | Random number         |
+| Math.ceil()   | Round upward          |
+| Math.floor()  | Round downward        |
+| Math.round()  | Round nearest integer |
+| Math.cbrt()   | Cube root             |
+
+
+
+#  Math.max()
+
+Returns larger value.
+Math.max(10, 20)
+
+
+
+# Math.min()
+
+Returns smaller value.
+
+Math.min(5, 2)
+
+
+# Math.sqrt()
+
+Returns square root.
+
+Math.sqrt(25)
+
+
+#  Math.pow()
+
+Returns power value.
+
+Math.pow(2, 3)
+
+
+# Math.abs()
+
+Returns absolute positive value.
+
+Math.abs(-10)
+
+# Math.random()
+
+Generates random number between: 0.0 to less than 1.0
+
+# Example
+Math.random()
+
+
+#  Generate Random Integer
+(int)(Math.random() * 100)
+
+Generates: 0 to 99
+
+
+# Math.ceil()
+Rounds upward.
+
+Math.ceil(5.2)
+
+Output: 6.0
+
+
+# Math.floor()
+Rounds downward.
+Math.floor(5.9)
+
+Output:5.0
+
+
+# Math.round()
+
+Rounds nearest integer.
+
+Math.round(5.6)
+
+Output:6
+
+
+# Math Constants
+
+| Constant | Purpose      |
+| -------- | ------------ |
+| Math.PI  | π value      |
+| Math.E   | Euler number |
+
+
+
+# Example
+Math.PI
+
+# Real-world Usage
+
+* Banking calculations
+* Game development
+* Physics calculations
+* Data analysis
+* Random OTP generation
+* Geometry calculations
+
+
+# Best Practices
+
+* Use Math methods instead of manual calculations
+* Prefer ThreadLocalRandom for advanced random generation
+* Be careful with floating-point precision
+
+
+# Important Interview Point
+
+Math class constructor is private:
+private Math()
+
+So: cannot create object
+
+new Math(); ❌
+
+Because Math is a utility class.
+
+In Java, a utility class is a specialized class designed to provide a
+collection of related static methods that perform generic tasks across an application.
+Unlike standard classes, utility classes are not intended to be instantiated.
