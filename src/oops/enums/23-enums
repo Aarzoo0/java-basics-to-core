@@ -1,0 +1,217 @@
+# Enums in Java
+
+
+
+#  What is Enum?
+
+Enum (Enumeration) is a special data type used to represent a fixed set of constants.
+
+
+#  Why Use Enums?
+
+Instead of using:
+String day = "MONDAY";
+
+
+or:
+int status = 1;
+
+
+we use enums for:
+
+* type safety
+* readability
+* fixed constants
+
+
+
+#  Example
+
+enum Day {
+    MONDAY,
+    TUESDAY,
+    WEDNESDAY
+}
+
+
+
+
+#  Important Characteristics
+
+* Enum constants are:
+
+  * public
+  * static
+  * final
+
+* Enum cannot be instantiated using `new`
+
+
+
+#  Syntax
+enum Status {
+    SUCCESS,
+    FAILED,
+    PENDING
+}
+
+
+
+
+#  Creating Enum Variable
+
+Day today = Day.MONDAY;
+
+
+
+
+#  Enum with switch-case
+
+Enums are heavily used with switch statements.
+
+
+#  Example
+
+switch(day) {
+
+    case MONDAY:
+        System.out.println("Start of week");
+        break;
+}
+
+
+
+
+#  Enum in if-else
+
+if(day == Day.SUNDAY) {
+
+}
+
+
+
+
+#  Enum Methods
+
+All enums internally extend:
+java.lang.Enum
+So they get built-in methods.
+
+
+
+#  Important Enum Methods
+
+| Method    | Purpose                    |
+| ----------------------------------------
+| values()  | Returns all constants      |
+| ordinal() | Returns index position     |
+| name()    | Returns enum constant name |
+| valueOf() | Converts String → Enum     |
+
+
+
+#  values()
+
+Returns all enum constants as array.
+Day.values()
+
+
+
+
+#  ordinal()
+
+Returns index position starting from 0.
+Day.MONDAY.ordinal()
+
+
+
+
+#  name()
+
+Returns enum constant name.
+Day.FRIDAY.name()
+
+
+
+#  valueOf()
+
+Converts string into enum constant.
+Day.valueOf("MONDAY")
+
+
+
+#  Enum Constructor
+
+Enums can have constructors.
+
+
+#  Example
+
+enum PizzaSize {
+
+    SMALL(100),
+    MEDIUM(200);
+
+    int price;
+
+    PizzaSize(int price) {
+        this.price = price;
+    }
+}
+
+
+
+
+#  Enum with Fields & Methods
+
+Enums can contain:
+
+* variables
+* constructors
+* methods
+
+
+
+#  Advantages of Enums
+
+* Type safety
+* Better readability
+* Prevent invalid values
+* Cleaner switch-case code
+
+
+
+#  Real-world Usage
+
+Enums are heavily used in:
+
+* Week days
+* Order status
+* Payment status
+* User roles
+* Traffic signals
+* API response states
+* Spring Boot applications
+
+
+
+#  Best Practices
+
+* Use enums for fixed constants
+* Prefer enums over String constants
+* Use switch-case with enums for cleaner logic
+
+
+
+#  Important Interview Point
+
+Enum constructor is always: private
+even if not written explicitly.
+
+
+
+#  Enum Memory Concept
+
+Enum constants are created only once.
+
+They behave like singleton objects.
